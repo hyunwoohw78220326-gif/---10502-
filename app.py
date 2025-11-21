@@ -2,7 +2,7 @@ import streamlit as st
 import random
 
 # 페이지 설정
-st.set_page_config(page_title="🎰 로또 시뮬레이터", layout="centered")
+st.set_page_config(page_title="🕹️🎰로또 한판 안할래..?🎰🕹️", layout="centered")
 
 # CSS로 주홍색 테마 적용
 st.markdown("""
@@ -10,6 +10,12 @@ st.markdown("""
 /* 전체 배경 */
 [data-testid="stAppViewContainer"] {
     background-color: #FFC0C0;
+}
+st.markdown("""
+<style>
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NEXONLv2Gothic.woff') format('woff');
 }
 
 /* 제목 */
