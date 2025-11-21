@@ -1,11 +1,60 @@
 import streamlit as st
 import random
-st.set_page_config(page_title="⭐🎰 나랑 로또 게임 해볼래..? 🎰 ⭐", page_icon="🎯", layout="centered")
 
+# 페이지 설정
+st.set_page_config(page_title="🎰 로또 시뮬레이터", layout="centered")
 
-st.title("🎰 10502 강현우 작품 🎰")
-st.markdown(" **1부터 45까지 숫자** 중에서 **메인 6개 + 보너스 1개** 번호를 뽑습니다. 행운을 빌어요 🍀")
-PLAY_input = st.text_input("로또 6개 숫자를 입력:")
+# CSS로 주홍색 테마 적용
+st.markdown("""
+<style>
+/* 전체 배경 */
+[data-testid="stAppViewContainer"] {
+    background-color: #FFF5F5;
+}
+
+/* 제목 */
+h1 {
+    font-family: 'Fredoka One', sans-serif;
+    color: #FF6B6B;
+}
+
+/* 본문 글꼴 */
+body, div, p {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 당첨 메시지 */
+.success {
+    color: #FF4C4C !important;
+    font-weight: bold;
+}
+
+/* 낙첨/경고 메시지 */
+.warning {
+    color: #FF7F50 !important;
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+.stButton>button {
+    background-color: #FF6B6B;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    height: 45px;
+    width: 160px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# 제목
+st.title("🕹️🎰 로또 시뮬레이터 🎰🕹️")
+
+st.write("1~45 숫자 6개를 입력하고, 결과를 확인하세요.")
+st.write("10502 강현우 작품")
+
+# 사용자 입력
+PLAY_input = st.text_input("숫자 6개를 띄어쓰기로 입력:")
 
 if PLAY_input:
     try:
@@ -21,7 +70,7 @@ if PLAY_input:
         else:
             PLAY.sort()
             개수 = 0
-            등수 = [6,5,4,3,2,1]  # 기존 코드 기준
+            등수 = [6,5,4,3,2,1]
 
             # 로또 번호 생성 (중복 없이 6개 + 보너스 1개)
             nums = random.sample(range(1,46),7)
@@ -41,11 +90,10 @@ if PLAY_input:
 
             st.write(f"맞춘 개수는 {개수}개 입니다")
 
-            # 등수 판단 (기존 코드 기준)
+            # 등수 판단 (보너스 포함)
             if 개수 < 3:
                 st.warning("낙첨입니다")
             else:
-                # 보너스 체크 포함
                 if 개수 == 5 and bonus in PLAY:
                     st.success("당신은 로또 2등 입니다! (보너스 번호 일치)")
                 else:
@@ -55,4 +103,4 @@ if PLAY_input:
                             break
                         
     except ValueError:
-        st.error("숫자만 입력해주세요")
+        st.error("⚠ 숫자만 입력해주세요")
