@@ -13,11 +13,6 @@ st.markdown("""
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NEXONLv2Gothic.woff') format('woff');
 }
 
-/* 전체 배경 */
-[data-testid="stAppViewContainer"] {
-    background-color: #FFD6D6;
-}
-
 /* 제목 */
 h1 {
     font-family: 'NEXON Lv2 Gothic', sans-serif;
@@ -54,7 +49,7 @@ body, div, p {
 """, unsafe_allow_html=True)
 
 # 제목
-st.title("🎰 로또 시뮬레이터 🕹️)")
+st.title("🎰나랑 로또 하지 않을래?..🕹️")
 
 st.write("1~45 숫자 6개를 입력하고, 결과를 확인하세요.")
 st.write("MADE BY 10502강현우")
