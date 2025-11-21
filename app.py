@@ -2,31 +2,31 @@ import streamlit as st
 import random
 
 # 페이지 설정
-st.set_page_config(page_title="🕹️🎰로또 한판 안할래..?🎰🕹️", layout="centered")
+st.set_page_config(page_title="🎰나랑 로또 한판 안할래..?🕹️", layout="centered")
 
-# CSS로 주홍색 테마 적용
+# CSS로 주홍 테마 + 넥슨 폰트 적용
 st.markdown("""
 <style>
-/* 전체 배경 */
-[data-testid="stAppViewContainer"] {
-    background-color: #FFC0C0;
-}
-st.markdown("""
-<style>
+/* 웹폰트 (넥슨 Lv2 Gothic) 불러오기 */
 @font-face {
     font-family: 'NEXON Lv2 Gothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NEXONLv2Gothic.woff') format('woff');
 }
 
+/* 전체 배경 */
+[data-testid="stAppViewContainer"] {
+    background-color: #FFD6D6;
+}
+
 /* 제목 */
 h1 {
-    font-family: 'Fredoka One', sans-serif;
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
     color: #FF6B6B;
 }
 
-/* 본문 글꼴 */
+/* 본문 */
 body, div, p {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'NEXON Lv2 Gothic', sans-serif;
 }
 
 /* 당첨 메시지 */
@@ -54,10 +54,10 @@ body, div, p {
 """, unsafe_allow_html=True)
 
 # 제목
-st.title("🕹️🎰 나랑 로또 한판 안할래..? 🎰🕹️")
+st.title("🎰 로또 시뮬레이터 🕹️)")
 
 st.write("1~45 숫자 6개를 입력하고, 결과를 확인하세요.")
-st.write("10502 강현우 작품")
+st.write("MADE BY 10502강현우")
 
 # 사용자 입력
 PLAY_input = st.text_input("숫자 6개를 띄어쓰기로 입력:")
@@ -83,7 +83,7 @@ if PLAY_input:
             fi, se, th, fo, fif, si = nums[:6]
             bonus = nums[6]
             LOTTO = [fi, se, th, fo, fif, si]
-            LOTTO.sort()  # 번호 정렬
+            LOTTO.sort()
 
             # 결과 출력
             st.write(f"진행자 : 로또 번호는 {LOTTO}, 보너스 번호는 {bonus}입니다.")
