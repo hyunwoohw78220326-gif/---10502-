@@ -27,17 +27,6 @@ st.markdown("""
     font-weight: bold;
 }
 
-/* 버튼 스타일 */
-.stButton>button {
-    background-color: #FF6B6B;
-    color: white;
-    font-weight: bold;
-    border-radius: 12px;
-    height: 45px;
-    width: 160px;
-}
-</style>
-""", unsafe_allow_html=True)
 
 # 제목
 st.title("🎰나랑 로또 하지 않을래?..🕹️")
