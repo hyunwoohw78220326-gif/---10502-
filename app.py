@@ -9,7 +9,7 @@ st.markdown("""
 <style>
 /* 전체 배경 */
 [data-testid="stAppViewContainer"] {
-    background-color: #FFF5F5;
+    background-color: #FFC0C0;
 }
 
 /* 제목 */
@@ -48,7 +48,7 @@ body, div, p {
 """, unsafe_allow_html=True)
 
 # 제목
-st.title("🕹️🎰 로또 시뮬레이터 🎰🕹️")
+st.title("🕹️🎰 나랑 로또 한판 안할래..? 🎰🕹️")
 
 st.write("1~45 숫자 6개를 입력하고, 결과를 확인하세요.")
 st.write("10502 강현우 작품")
