@@ -4,25 +4,16 @@ import random
 # 페이지 설정
 st.set_page_config(page_title="🎰나랑 로또 한판 안할래..?🕹️", layout="centered")
 
-# CSS로 주홍 테마 + 넥슨 폰트 적용
 st.markdown("""
 <style>
-/* 웹폰트 (넥슨 Lv2 Gothic) 불러오기 */
-@font-face {
-    font-family: 'NEXON Lv2 Gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/NEXONLv2Gothic.woff') format('woff');
-}
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
-/* 제목 */
-h1 {
-    font-family: 'NEXON Lv2 Gothic', sans-serif;
-    color: #FF6B6B;
+.stApp {
+    /* 앱 전체에 배달의민족 도현체 적용 */
+    font-family: 'Do Hyeon', sans-serif;
 }
-
-/* 본문 */
-body, div, p {
-    font-family: 'NEXON Lv2 Gothic', sans-serif;
-}
+</style>
+""", unsafe_allow_html=True)
 
 /* 당첨 메시지 */
 .success {
